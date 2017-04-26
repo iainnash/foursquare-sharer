@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <script src="https://www.webglearth.com/v2/api.js"></script>
+    <script>
+      function initialize() {
+        $.getJSON('/where', function(data) {
+          // data.country
+          // data.city
+          var lat = data.lat;
+          var lng = data.lng;
+          
+          var earth = new WE.map('earth_div', {
+            center: [lat, lng],
+            size: 5,
+          });
+          
+          //WE.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(earth);
+          WE.tileLayer('http://data.webglearth.com/tileserver/world-dark/{z}/{x}/{y}.png').addTo(earth);
+  
+          var marker2 = WE.marker([lat, lng]).addTo(earth);
+          marker2.bindPopup("<b>"+data.city+"</b><br>"+data.country, {maxWidth: 120, closeButton: false});
+  
+          WE.marker([50, -9], '/img/logo-webglearth-white-100.png', 100, 24).addTo(earth);
+        });
+      }
+      
+    </script>
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js"
+            integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00="
+            crossorigin="anonymous"></script>
+    <style>
+      html, body{padding: 0; margin: 0; background-color: black;}
+      #earth_div{top: 0; right: 0; bottom: 0; left: 0; position: absolute !important;}
+    </style>
+    <title>WebGL Earth API: Markers</title>
+  </head>
+  <body onload="initialize()">
+    <div id="earth_div"></div>
+  </body>
+</html>
