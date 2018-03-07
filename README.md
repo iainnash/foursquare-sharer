@@ -1,27 +1,12 @@
-Welcome to the Gomix BETA
+Foursquare Location Sharer
 =========================
 
-Click `"Show"` in the header to see your app live. Updates to your code will instantly deploy and update live.
+Share your current city, location type, and approximate globe address from your last foursquare checkin with this little webapp.
 
-Gomix is a developer playground that lets you code a real web-app without the slow setup and deployment steps.
-
-[About Gomix](https://gomix.com/about)
-
-
-Your Project
+Deployment
 ------------
 
-On the back-end,
-- your app starts at `server.js`
-- add frameworks and packages in `package.json`
-- safely store app secrets in `.env`
+This was developed as a glitch app, but is just a nodejs application. Some keys and details are needed to run this application as seen from the environment file.
 
-On the front-end,
-- edit `client.js`, `style.css` and `index.html`
-- drag in `assets`, like images or music, to add them to your project
-
-
-Made by Fog Creek
------------------
 
 \ ゜o゜)ノ
